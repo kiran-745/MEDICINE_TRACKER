@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Our Team - Medicine Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('https://i.pinimg.com/736x/17/2f/62/172f621fee029077b13a9edd097f7d8e.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    .main-header, .site-footer {position: relative;}
+    .contact-section {
+      padding: 100px 0 50px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact-title {
+      color: #622fd6;
+      background: rgba(255,255,255, 0.7);
+      border-radius: 16px;
+      padding: 16px 34px;
+      font-size: 2rem;
+      font-weight: 700;
+      box-shadow: 0 2px 30px #b380f444;
+      margin-bottom: 28px;
+    }
+    .team-row {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .member-card {
+      background: rgba(255,255,255,0.92);
+      border-radius: 16px;
+      box-shadow: 0 6px 20px #622fd655;
+      text-align: center;
+      padding: 32px 28px 26px 28px;
+      min-width: 230px;
+      max-width: 260px;
+      margin: 10px 0;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .member-card:hover {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 14px 34px #622fd6bb;
+    }
+    .member-photo {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 12px;
+      border: 3px solid #fff7;
+      box-shadow: 0 0 18px #b380f355;
+    }
+    .member-name {
+      font-size: 1.2rem;
+      color: #622fd6;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .member-role {
+      font-size: 1.01rem;
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 8px;
+    }
+    .member-contact {
+      color: #32187a;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      word-break: break-all;
+    }
+    @media (max-width: 900px) {
+      .team-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="nav-left">Medicine Tracker</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="service.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">FAQ</a>
+    </nav>
+    <div class="logo-area">
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="App Logo" class="animated-logo" />
+    </div>
+  </header>
+
+  <section class="contact-section">
+    <div class="contact-title">Contact Our Team</div>
+    <div class="team-row">
+      <div class="member-card">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member 1" class="member-photo" />
+        <div class="member-name">Rahul Sharma</div>
+        <div class="member-role">Frontend Developer</div>
+        <div class="member-contact">
+          Phone: +91 98765 43210<br>
+          Email: rahul.sharma@email.com
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Team Member 2" class="member-photo" />
+        <div class="member-name">Priya Kapoor</div>
+        <div class="member-role">Backend Developer</div>
+        <div class="member-contact">
+          Phone: +91 99887 77665<br>
+          Email: priya.kapoor@email.com
+        </div>
+      </div>
+      <div class="member-card">
+        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Team Member 3" class="member-photo" />
+        <div class="member-name">Arjun Sinha</div>
+        <div class="member-role">UI/UX Designer</div>
+        <div class="member-contact">
+          Phone: +91 91234 44567<br>
+          Email: arjun.sinha@email.com
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    Contact: support@medicinetracker.com | +1 (800) 555-0123 | 123 Wellness Blvd, Healthy City, HC 45678
+  </footer>
+</body>
+</html>
