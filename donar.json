@@ -1,0 +1,55 @@
+{
+  "donors": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phone": "+1234567890",
+      "medicineType": "Tablets"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "janesmith@example.com",
+      "phone": "+1987654321",
+      "medicineType": "Syrups"
+    }
+  ],
+  "medicines": [
+    {
+      "id": 101,
+      "name": "Paracetamol",
+      "dosage": "500mg",
+      "schedule": ["08:00", "20:00"]
+    },
+    {
+      "id": 102,
+      "name": "Amoxicillin",
+      "dosage": "250mg",
+      "schedule": ["09:00", "21:00"]
+    }
+  ],
+  "ngos": [
+    {
+      "id": 201,
+      "name": "Health First NGO",
+      "location": "Cityville",
+      "contactEmail": "contact@healthfirst.org",
+      "programs": ["Free Medicine Distribution", "Vaccination Camps"],
+      "activeHelpCenters": 5
+    },
+    {
+      "id": 202,
+      "name": "Care & Cure",
+      "location": "Townsville",
+      "contactEmail": "info@careandcure.org",
+      "programs": ["Awareness Campaigns", "Health Checkups"],
+      "activeHelpCenters": 3
+    }
+  ],
+  "statistics": {
+    "totalHelpCenters": 8,
+    "totalNGOs": 2,
+    "beneficiariesSupported": 10000
+  }
+}

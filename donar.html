@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Donor Management - Medicine Tracker</title>
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: url('https://i.pinimg.com/736x/17/2f/62/172f621fee029077b13a9edd097f7d8e.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    min-height: 100vh;
+    padding-top: 64px;
+  }
+  .main-header, .site-footer { position: fixed; width: 100%; left: 0; z-index: 100;}
+  .main-header {
+    top: 0;
+    background: rgba(44, 21, 94, 0.85);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    color: white;
+  }
+  .nav-left { font-size: 1.6rem; font-weight: 700; letter-spacing: 1.2px; }
+  nav a {
+    color: #fbc2eb;
+    margin-left: 24px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.22s;
+  }
+  nav a:hover { color: #fff; border-bottom: 2px solid #fff; }
+  .logo-area img {
+    height: 42px;
+    animation: spin 2.8s linear infinite;
+    filter: drop-shadow(0 0 10px #fbc2eb66);
+    cursor: pointer;
+  }
+  @keyframes spin { 0% { transform: rotate(0deg);} 100% { transform: rotate(360deg);} }
+
+  main {
+    max-width: 960px;
+    margin: 80px auto 40px auto;
+    background: rgba(255,255,255,0.95);
+    padding: 20px 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px #b380f433;
+    color: #333;
+  }
+  h1 {
+    text-align: center;
+    color: #622fd6;
+    margin-bottom: 24px;
+  }
+  form {
+    max-width: 600px;
+    margin: auto;
+    display: grid;
+    gap: 16px;
+  }
+  label {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  input[type="text"], input[type="email"], input[type="tel"], select {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus {
+    outline: none;
+    border-color: #622fd6;
+  }
+  button {
+    padding: 12px;
+    background-color: #622fd6;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+  }
+  button:hover { background-color: #4a2299; }
+  .donor-list {
+    margin-top: 40px;
+  }
+  .donor-list table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  .donor-list th, .donor-list td {
+    border-bottom: 1px solid #aaa;
+    padding: 12px 8px;
+  }
+  .donor-list th {
+    background-color: #622fd6;
+    color: #fff;
+  }
+  .donor-list tr:hover {
+    background-color: #e6e0f8;
+  }
+  .empty-msg {
+    font-style: italic;
+    color: #666;
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<header class="main-header">
+  <div class="nav-left">Medicine Tracker</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="ngo.html">NGO</a>
+    <a href="donor.html" style="border-bottom: 2px solid #fff;">Donor</a>
+  </nav>
+  <div class="logo-area">
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="App Logo" />
+  </div>
+</header>
+
+<main>
+  <h1>Add Donor Information</h1>
+  <form id="donorForm">
+    <label for="donorName">Full Name</label>
+    <input type="text" id="donorName" name="donorName" placeholder="Enter full name" required />
+    
+    <label for="donorEmail">Email Address</label>
+    <input type="email" id="donorEmail" name="donorEmail" placeholder="Enter email" required />
+    
+    <label for="donorPhone">Phone Number</label>
+    <input type="tel" id="donorPhone" name="donorPhone" placeholder="Enter phone number" required />
+
+    <label for="medicineType">Type of Medicine</label>
+    <select id="medicineType" name="medicineType" required>
+      <option value="" disabled selected>Select medicine type</option>
+      <option value="Tablets">Tablets</option>
+      <option value="Capsules">Capsules</option>
+      <option value="Syrups">Syrups</option>
+      <option value="Injections">Injections</option>
+      <option value="Ointments">Ointments</option>
+      <option value="Supplements">Supplements</option>
+    </select>
+    
+    <button type="submit">Add Donor</button>
+  </form>
+
+  <section class="donor-list">
+    <h2>Donor List</h2>
+    <table id="donorsTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Medicine Type</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p class="empty-msg" id="emptyMsg">No donors added yet.</p>
+  </section>
+</main>
+
+<script>
+  const donorForm = document.getElementById('donorForm');
+  const donorsTableBody = document.querySelector('#donorsTable tbody');
+  const emptyMsg = document.getElementById('emptyMsg');
+
+  let donors = JSON.parse(localStorage.getItem('donors')) || [];
+
+  function renderDonors() {
+    donorsTableBody.innerHTML = '';
+    if (donors.length === 0) {
+      emptyMsg.style.display = 'block';
+      return;
+    }
+    emptyMsg.style.display = 'none';
+    donors.forEach(({name, email, phone, medicineType}) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${name}</td>
+        <td>${email}</td>
+        <td>${phone}</td>
+        <td>${medicineType}</td>
+      `;
+      donorsTableBody.appendChild(row);
+    });
+  }
+
+  donorForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = donorForm.donorName.value.trim();
+    const email = donorForm.donorEmail.value.trim();
+    const phone = donorForm.donorPhone.value.trim();
+    const medicineType = donorForm.medicineType.value;
+
+    donors.push({name, email, phone, medicineType});
+    localStorage.setItem('donors', JSON.stringify(donors));
+    renderDonors();
+    donorForm.reset();
+  });
+
+  renderDonors();
+</script>
+
+<footer class="site-footer">
+  Contact: support@medicinetracker.com | +1 (800) 555-0123 | 123 Wellness Blvd, Healthy City, HC 45678
+</footer>
+</body>
+</html>
