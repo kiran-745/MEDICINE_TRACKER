@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medicine Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: url('https://i.pinimg.com/736x/17/2f/62/172f621fee029077b13a9edd097f7d8e.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+    }
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background: rgba(44, 21, 94, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 2000;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      padding: 0 32px;
+    }
+    .nav-left {
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+    .main-header nav {
+      display: flex;
+      gap: 28px;
+    }
+    .main-header nav a {
+      color: #fbc2eb;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      font-size: 1rem;
+      transition: color 0.22s;
+      padding-bottom: 3px;
+    }
+    .main-header nav a:hover {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+    .logo-area {
+      margin-left: 18px;
+    }
+    .animated-logo {
+      height: 42px;
+      width: 42px;
+      animation: spin 2.8s linear infinite;
+      filter: drop-shadow(0 0 10px #fbc2eb66);
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+    .hero {
+      height: 360px;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 64px;
+      overflow: hidden;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      background: rgba(44, 21, 94, 0.62);
+      border-radius: 18px;
+      padding: 28px 24px;
+      max-width: 710px;
+      margin: auto;
+      box-shadow: 0 2px 38px #32187a44;
+    }
+    .hero-content .welcome {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      text-shadow: 0 4px 32px #3e3388aa;
+    }
+    @keyframes fadein-slide {
+      0% {opacity: 0; transform: translateY(32px);}
+      90% {opacity: 1;}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+    .animated-text {
+      animation: fadein-slide 1.2s ease;
+    }
+    .hero-desc {
+      font-size: 1.13rem;
+      line-height: 1.5;
+      max-width: 520px;
+      margin: auto;
+      background: rgba(92,47,145,0.09);
+      border-radius: 10px;
+      padding: 13px 18px;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .main-options {
+      display: flex;
+      gap: 34px;
+      margin: 55px 0 36px 0;
+      width: 80vw;
+      max-width: 900px;
+      justify-content: center;
+    }
+    .option-box {
+      flex: 1;
+      min-width: 170px;
+      max-width: 265px;
+      padding: 38px 18px 28px 18px;
+      margin: 0;
+      border-radius: 16px;
+      background: rgba(250, 205, 250, 0.93);
+      box-shadow: 0 6px 26px #b380f333;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.28s cubic-bezier(0.4,1,0.7,1), box-shadow 0.24s;
+      border: 2px solid #e5a4e828;
+      backdrop-filter: blur(1.5px);
+    }
+    .option-box h2 {
+      color: #622fd6;
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 1.1px;
+    }
+    .option-box p {
+      color: #222;
+      opacity: 0.9;
+      font-size: 1.02rem;
+    }
+    .option-box:hover {
+      transform: scale(1.076) translateY(-6px);
+      box-shadow: 0 12px 34px #b380f366, 0 2px 20px #e5a4e8cc;
+      background: rgba(255, 241, 255, 1);
+    }
+    .site-footer {
+      background: #622fd6;
+      color: #fff;
+      text-align: center;
+      font-size: 1.03em;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 11px 2vw;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -2px 20px #622fd6a0;
+      z-index: 90;
+    }
+    @media (max-width:900px) {
+      .main-options {flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="nav-left">Medicine Tracker</div>
+    <nav>
+      <a href="index.html" style="border-bottom: 2px solid #fff;">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="ngo.html">NGO</a>
+      <a href="donor.html">Donor</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <div class="logo-area">
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="App Logo" class="animated-logo" />
+    </div>
+  </header>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="welcome animated-text">Welcome to Medicine Tracker</h1>
+      <p class="hero-desc">A smart, secure and easy way to manage, track, and donate medicines. Join us to improve health in your community: set reminders, support NGOs, become a donor, and learn more about medicine management!</p>
+    </div>
+  </section>
+  
+  <main>
+    <section class="main-options">
+      <div class="option-box" onclick="window.location.href='ngo.html'">
+        <h2>NGO</h2>
+        <p>Support or collaborate for greater community impact.</p>
+      </div>
+      <div class="option-box" onclick="window.location.href='donor.html'">
+        <h2>Donor</h2>
+        <p>Help others by donating or supporting initiatives.</p>
+      </div>
+      <div class="option-box" onclick="window.location.href='about.html'">
+        <h2>About Us</h2>
+        <p>Discover our mission, team, and the story behind the app.</p>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="site-footer">
+    Contact: support@medicinetracker.com | +1 (800) 555-0123 | 123 Wellness Blvd, Healthy City, HC 45678
+  </footer>
+</body>
+</html>
