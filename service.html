@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Services - Medicine Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background: url('https://i.pinimg.com/736x/17/2f/62/172f621fee029077b13a9edd097f7d8e.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      min-height: 100vh;
+      padding-top: 64px;
+      color: #333;
+    }
+    .main-header, .site-footer {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      z-index: 100;
+    }
+    .main-header {
+      top: 0;
+      background: rgba(44, 21, 94, 0.85);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      color: white;
+    }
+    .nav-left {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+    nav a {
+      color: #fbc2eb;
+      margin-left: 24px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.22s;
+    }
+    nav a:hover, nav a.active {
+      color: #fff;
+      border-bottom: 2px solid #fff;
+    }
+    .logo-area img {
+      height: 42px;
+      animation: spin 2.8s linear infinite;
+      filter: drop-shadow(0 0 10px #fbc2eb66);
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg);}
+      100% { transform: rotate(360deg);}
+    }
+    main {
+      max-width: 960px;
+      margin: 80px auto 40px auto;
+      background: rgba(255,255,255,0.95);
+      padding: 32px 36px;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px #b380f433;
+    }
+    h1 {
+      color: #622fd6;
+      text-align: center;
+      font-weight: 800;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+    }
+    section.service-block {
+      margin-bottom: 36px;
+      border-left: 8px solid #622fd6;
+      padding-left: 20px;
+    }
+    section.service-block h2 {
+      color: #622fd6;
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+    section.service-block p {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      color: #3a3a3a;
+    }
+
+    .site-footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #622fd6cc;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+      font-weight: 500;
+      box-shadow: 0 -3px 24px #622fd6cc;
+      font-size: 1.05rem;
+      user-select: none;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <div class="nav-left">Medicine Tracker</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="ngo.html">NGO</a>
+      <a href="donor.html">Donor</a>
+    </nav>
+    <div class="logo-area">
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="App Logo" />
+    </div>
+  </header>
+
+  <main>
+    <h1>Our Services</h1>
+
+    <section class="service-block">
+      <h2>Medicine Tracking & Reminders</h2>
+      <p>
+        Our app offers an easy way to record your medicines, dosages, and scheduled times to take them. Set personalized reminders so you never miss a dose, helping you adhere to your treatment successfully and maintain better health.
+      </p>
+    </section>
+
+    <section class="service-block">
+      <h2>Community Health Center Partnerships</h2>
+      <p>
+        We collaborate with numerous help centers and health NGOs to improve access to medication and health education. Together, we assist underserved populations in gaining affordable and timely medical support.
+      </p>
+    </section>
+
+    <section class="service-block">
+      <h2>Donor & Volunteer Coordination</h2>
+      <p>
+        Connecting donors and volunteers to impactful healthcare initiatives is a core part of our mission. We facilitate easy contributions and engagement opportunities to support medical programs and NGO activities.
+      </p>
+    </section>
+
+    <section class="service-block">
+      <h2>Health Education & Awareness</h2>
+      <p>
+        Our platform supports outreach campaigns and informational content on chronic disease management, vaccination, hygiene, and preventive care developed in partnership with healthcare experts and NGOs.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    Contact: support@medicinetracker.com | +1 (800) 555-0123 | 123 Wellness Blvd, Healthy City, HC 45678
+  </footer>
+</body>
+</html>
